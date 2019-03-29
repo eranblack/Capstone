@@ -26,8 +26,11 @@ Model 1:
 - The model predicted with MSE of 8.7 --> which means an average error of 2.9 points in the ppg prediction
 - Tested the feature importance of see figure:
 ![Model1 feature importances](plots/model1_FI.png)
-
+<p align="center">
+    <img src="plots/model1_resids.png" alt="alternate text">
+ </p>
 ![Model1 residuals](plots/model1_resids.png)
+
 
 - This result shows that we get a good prediction only using previous season ppg, age and previous minutes played, whereas
     coach affect isn't showing.
