@@ -24,4 +24,4 @@ Model 1:
 - Created a random forest regressor model that takes in the features discussed above and predicts player ppg
 - The model predicted with MSE of 8.7 --> which means an average error of 2.9 points in the ppg prediction
 - Tested the feature importance of see figure:
-- ![Model1 feature importances]('plots/model1_FI.png')
+- ![Model1 feature importances](plots/model1_FI.png)
