@@ -13,7 +13,7 @@ Data cleaning:
 - removed duplicates and NaN's
 - code for data cleaning in cleaning.py
 
-## Part1 
+## Part1 - Hypothesis testing
 Test whether coach effects player performance?
 In order to test the relation of the coach to player performance I created a model that uses 4 features and
 predicts player's next season ppg (points per game):
@@ -80,6 +80,4 @@ model2:
 
 ## part2
 Hypothesis testing:
-- Null Hypothesis --> H<sub>0</sub> - coach has no effect --> W/L% stays the same after team changes a coach
-- Alternative Hypothesis --> H<sub>a</sub> - team W/L% changes when a new coach comes
--
+- Null Hypothesis --> H_
