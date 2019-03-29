@@ -14,7 +14,7 @@ Data cleaning:
 - code for data cleaning in cleaning.py
 
 Part1 - Hypothesis testing
-Test wether coach effects player performance?
+Test whether coach effects player performance?
 In order to test the relation of the coach to player performance I created a model that uses 4 features and
 predicts player's next season ppg (points per game):
 - features chosen: player previous season ppg, player previous season minutes played, player age and coach.
@@ -44,4 +44,32 @@ I did this so players that have a high ppg average don't bias the model.
 
 model2:
 - created a random forest model with normalized values
--
+- Used the sam features I used in model 1
+- for this model the MSE is 0.044 whereas the benchmark is 0.081
+- feature importance is still showing the coach has very limited effect
+
+<p align="center">
+    <img src="plots/model2_FI.png" alt="alternate text">
+ </p>
+
+ <p align="center">
+     <img src="plots/model2_resids.png" alt="alternate text">
+  </p>
+
+ Based on this result I decided to further investigate the coach effect:
+
+ model3:
+ In this model I tried to measure coach effect but on a team level and not a player level:
+ - Tried to predict a team W/L % ratio based on previous season W/L% and coach.
+ - Created a random forest model which got a MSE 0.0165 whereas the benchmark got 0.0168
+
+ <p align="left">
+     <img src="plots/model3_FI.png" alt="alternate text">
+  </p>
+  <p align="center">
+      <img src="plots/model3_resids.png" alt="alternate text">
+   </p>
+
+   <p align="right">
+       <img src="plots/model3_bar.png" alt="alternate text">
+    </p>
