@@ -22,6 +22,18 @@ predicts player's next season ppg (points per game):
 
 Model 1:
 - Created a random forest regressor model that takes in the features discussed above and predicts player ppg
+- the benchmark for this model is to predict the previous season ppg. Benchmark MSE=10.36 --> 3.21
 - The model predicted with MSE of 8.7 --> which means an average error of 2.9 points in the ppg prediction
 - Tested the feature importance of see figure:
-- ![Model1 feature importances](plots/model1_FI.png)
+![Model1 feature importances](plots/model1_FI.png)
+![Model1 residuals](plots/model1_resids.png)
+- This result shows that we get a good prediction only using previous season ppg, age and previous minutes played, whereas
+    coach affect isn't showing.
+
+In order to understand this result I tried running the model again after normalizing the data based on player -->
+normalized_ppg = player_ppg/max_player_ppg
+I did this so players that have a high ppg average don't bias the model.
+
+model2:
+- created a random forest model with normalized values
+-
