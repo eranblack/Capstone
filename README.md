@@ -28,11 +28,11 @@ Model 1:
 <p align="center">
     <img src="plots/model1_FI.png" alt="alternate text">
  </p>
-![Model1 feature importances](plots/model1_FI.png)
+<!-- ![Model1 feature importances](plots/model1_FI.png) -->
 <p align="center">
     <img src="plots/model1_resids.png" alt="alternate text">
  </p>
-![Model1 residuals](plots/model1_resids.png)
+<!-- ![Model1 residuals](plots/model1_resids.png) -->
 
 
 - This result shows that we get a good prediction only using previous season ppg, age and previous minutes played, whereas
