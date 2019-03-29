@@ -25,6 +25,9 @@ Model 1:
 - the benchmark for this model is to predict the previous season ppg. Benchmark MSE=10.36 --> 3.21
 - The model predicted with MSE of 8.7 --> which means an average error of 2.9 points in the ppg prediction
 - Tested the feature importance of see figure:
+<p align="center">
+    <img src="plots/model1_FI.png" alt="alternate text">
+ </p>
 ![Model1 feature importances](plots/model1_FI.png)
 <p align="center">
     <img src="plots/model1_resids.png" alt="alternate text">
