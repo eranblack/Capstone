@@ -85,7 +85,6 @@ Hypothesis testing:
 - Significance level alpha = 5%
 - Ran the test comparing between W/L ratio between a season after a coach change and before
 
-### Experiment:
 Assumptions:
 - One game is a Bernoulli trial --> G ~ Bernoulli(P), E[G]=P
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
