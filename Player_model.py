@@ -123,3 +123,10 @@ scores=cross_validate(rf_reg,X=X_train,y=y_train,scoring='neg_mean_squared_error
 imp =importances(rf_reg, X_test, y_test) # permutation
 viz = plot_importances(imp,width=6, vscale=2)
 viz.view()
+
+#plotting:
+
+plt.scatter(y_test.values,y_test.values-y_pred.reshape(-1,1),alpha=0.3, c='orange')
+plt.title('y_test vs residuals')
+plt.xlabel('y_test')
+plt.ylabel('residuals')
