@@ -82,15 +82,11 @@ model2:
 Hypothesis testing:
 - Null Hypothesis --> H<sub>0</sub> - coach has no effect --> W/L% stays the same after team changes a coach
 - Alternative Hypothesis --> H<sub>a</sub> - team W/L% changes when a new coach comes
-- Significance level alpha = 5%
+- Significance level &#x3B1; = 5%
 - Ran the test comparing between W/L ratio between a season after a coach change and before
 
 Assumptions:
 - One game is a Bernoulli trial --> G ~ Bernoulli(P), E[G]=P
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
-- S&#772; =S/N
-- x&#772;
--
-
-&#945;
-- &#x3B1;
+- S&#772; = S/N , E[S&#772;] = P
+- D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT D ~ (0,&#x3C3;)
