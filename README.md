@@ -88,3 +88,4 @@ Hypothesis testing:
 Assumptions:
 - One game is a Bernoulli trial --> G ~ Bernoulli(P), E[G]=P
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
+- H<span>&#864;</span>
