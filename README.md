@@ -40,11 +40,11 @@ Model 1:
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
 normalized_ppg = player_ppg/max_player_ppg
-I did this so players that have a high ppg average don't bias the model.
+I did this so players that have a high ppg average don't "hide" the coach effect.
 
 model2:
 - created a random forest model with normalized values
-- Used the sam features I used in model 1
+- Used the same features I used in model 1
 - for this model the MSE is 0.044 whereas the benchmark is 0.081
 - feature importance is still showing the coach has very limited effect
 
@@ -90,3 +90,25 @@ Assumptions:
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT D ~ (0,&#x3C3;)
+
+Result of a 2 sided t-test:
+- p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach --> needs further investigation
+- According to this result I decided to continue optimizing the model without using the coach a feature
+
+## part3 - Model optimization:
+step 1 - feature engineering
+- Tested different features to include in the model, most of the features didn't contribute
+    - Benchmark MSE =
+    - Model MSE =
+- Added two features rolling mean and rolling ppg that include previous seasons
+    - Model MSE =
+- Added KMeans clustering to differentiate between players with high mean / low mean / high variance / low variance
+    - cluster figure:
+    - Model MSE =
+- Tried using a GradienBoost model --> bigger error
+- Ran a grid search on my random forest for hyper parameter optimization
+    - Number of estimators = 200 , max_depth = 5
+    - Model MSE --> final
+
+## Part 4
+User Manual:
