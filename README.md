@@ -98,17 +98,28 @@ Result of a 2 sided t-test:
 ## part3 - Model optimization:
 step 1 - feature engineering
 - Tested different features to include in the model, most of the features didn't contribute
-    - Benchmark MSE =
-    - Model MSE =
-- Added two features rolling mean and rolling ppg that include previous seasons
-    - Model MSE =
+    - Benchmark MSE = 9.82
+    - Model MSE = 9.328
+- Ran a grid search on my random forest for hyper parameter optimization
+    - max depth 3 --> 5
+    - n_estimators 100 -->200
+    - model MSE = 8.896
+- Added two features rolling mean ppg and rolling variance ppg that include previous seasons
+    - Model MSE = 8.77
 - Added KMeans clustering to differentiate between players with high mean / low mean / high variance / low variance
     - cluster figure:
-    - Model MSE =
-- Tried using a GradienBoost model --> bigger error
-- Ran a grid search on my random forest for hyper parameter optimization
-    - Number of estimators = 200 , max_depth = 5
-    - Model MSE --> final
-
-## Part 4
-User Manual:
+    <p align="center">
+        <img src="plots/KMeans_minibatch.png" alt="alternate text">
+     </p>
+    - Model MSE = 8.744
+- Tried using a GradientBoost model --> bigger error
+- Removed features with low permutation importance:
+    - Model MSE = 8.676
+    - Set this to be the final model
+    - Key features:
+        - Previous year ppg
+        - Cluster (8 clusters, label0 - label6)
+        - Age
+        - log mean ppg
+        - var ppg
+## Part 4 - Results

@@ -56,12 +56,12 @@ class ModelP:
         df_year['label']=self.label_test
         df_year=pd.get_dummies(df_year,columns=['label'])
 
-        self.X_train=df_train[['Age_x','ppg_y','mean_ppg_y','log_mean_ppg_y','var_ppg_y','ppg_y_std','MP_y','FG%_y','FGA_y','eFG%_y','FT%_y','FTA_y','3P%_y','3PA_y','PF_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6','label_7']]
+        self.X_train=df_train[['Age_x','ppg_y','log_mean_ppg_y','var_ppg_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6']]
         self.y_train=df_train[['ppg_x']]
-        self.X_test=df_year[['Age_x','ppg_y','mean_ppg_y','log_mean_ppg_y','var_ppg_y','ppg_y_std','MP_y','FG%_y','FGA_y','eFG%_y','FT%_y','FTA_y','3P%_y','3PA_y','PF_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6','label_7']]
+        self.X_test=df_year[['Age_x','ppg_y','log_mean_ppg_y','var_ppg_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6']]
         self.y_test=df_year[['ppg_x']]
 
-    def model_predict(self,*args): # predicts the player/all players ppg
+    def predict(self,*args): # predicts the player/all players ppg
         player_d={}
         self.rf_reg.fit(self.X_train,self.y_train)
         self.y_pred=self.rf_reg.predict(self.X_test)
