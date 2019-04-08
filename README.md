@@ -93,24 +93,15 @@ Assumptions:
   <div class="column">
     <img src="plots/Hypo_dist.png" alt="Forest" style="width:100%">
   </div>
-
 </div>
 
-
-<p> <img src="plots/rv_dist.png" alt="rv dist" align="right" height="300" width="300"> </p>
-
-
 Result of a 2 sided t-test:
-<p align="center">
-    <img src="plots/Hypo_dist.png" alt="alternate text">
-    <img src="plots/Hypo_dist.png" alt="alternate text">
- </p>
-
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
   needs further investigation
 - According to these results I decided to continue optimizing the model without using the coach a feature
 
 ## part3 - Model optimization:
+<p> <img src="Images/Optimization.jpg" alt="optimization" align="right" height="400" width="400"> </p>
 step 1 - feature engineering
 - Tested different features to include in the model, most of the features didn't contribute
     - Benchmark MSE = 9.82
