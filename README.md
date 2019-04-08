@@ -1,45 +1,51 @@
 # Predicting NBA Player performance
 <p align="center">
-    <img src="Images/Header.jpg" alt="header" height="150" width="150">
+    <img src="Images/Header.jpg" alt="header" height="350" width="350">
  </p>
-In this project I want to predict player performance with relation to the coach.
+In this project I want to predict player performance, as first step I will predict a players seasonal ppg (points per game)
 
 Data Collection:
 - player data collected from kaggle https://www.kaggle.com/drgilermo/nba-players-stats
 - coach data was scraped from https://www.basketball-reference.com/coaches/
     - Scraped the data via BeautifulSoup
-    - Scraping code is located in the scrape.py file
+    - Scraping code is located in the Coach_Data.py
 
 Data cleaning:
 - merged the coach and the player datasets
 - removed all data prior to 2005
 - removed duplicates and NaN's
-- code for data cleaning in cleaning.py
+- code for data cleaning in Coach_Data.py, Season_Data.py, featurized_season_data.py
 
-## Part1
-Test whether coach effects player performance?
-In order to test the relation of the coach to player performance I created a model that uses 4 features and
-predicts player's next season ppg (points per game):
-- features chosen: player previous season ppg, player previous season minutes played, player age and coach.
-- I chose to use a limited amount of player features so it would be easier to identify if the coach effects the prediction
-
-Model 1:
-- Created a random forest regressor model that takes in the features discussed above and predicts player ppg
-- the benchmark for this model is to predict the previous season ppg. Benchmark MSE=10.36 --> 3.21
-- The model predicted with MSE of 8.7 --> which means an average error of 2.9 points in the ppg prediction
-- Tested the feature importance of see figure:
-<p align="center">
-    <img src="plots/model1_FI.png" alt="alternate text">
+## Part1 - Data Exploration and initial modeling
+<p align="right">
+    <img src="Images/Investigation.jpg" alt="Investigation" height="350" width="350">
  </p>
-<!-- ![Model1 feature importances](plots/model1_FI.png) -->
+Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect
+Chosen features:
+ - Player Age
+ - Player previous season ppg
+ - Coach
+ - previous season minutes played
+
+ ### model1:
+ - Created a random forest regressor model that takes in the features discussed above and predicts player ppg
+ - I chose to use a limited amount of player features so it would be easier to identify if the coach effects the prediction
+ - Created permutation feature importance to see which features are important
+ - Tested the feature importance, see figure:
 <p align="center">
-    <img src="plots/model1_resids.png" alt="alternate text">
+    <img src="plots/model1_FI.png" alt="feature importances">
  </p>
-<!-- ![Model1 residuals](plots/model1_resids.png) -->
 
-
+<p align="center">
+    <img src="plots/model1_resids.png" alt="model1_resids">
+ </p>
 - This result shows that we get a good prediction only using previous season ppg, age and previous minutes played, whereas
     coach affect isn't showing.
+
+### Is there a coach effect?
+<p align="center">
+    <img src="plots/Coach_Pop.jpg" alt="Coach_Pop">
+ </p>
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
 normalized_ppg = player_ppg/max_player_ppg
