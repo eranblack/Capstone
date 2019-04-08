@@ -86,14 +86,10 @@ Assumptions:
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
-<div class="row">
-  <div class="column">
-    <img src="plots/rv_dist.png" alt="Snow" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="plots/Hypo_dist.png" alt="Forest" style="width:100%">
-  </div>
-</div>
+
+    <img src="plots/rv_dist.png" alt="Snow" style="width:50%">  <img src="plots/Hypo_dist.png" alt="Forest" style="width:50%">
+  
+
 
 Result of a 2 sided t-test:
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
