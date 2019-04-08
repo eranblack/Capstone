@@ -37,7 +37,7 @@ Chosen features:
 
 This result shows that the coach isn't a good feature for the model, this doesn't make sense so I decided to investigate further.
 ### Is there a coach effect?
-<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center" height="350" width="350"> </p>
+<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center" height="500" width="500"> </p>
 
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
@@ -74,7 +74,7 @@ I did this so players that have a high ppg average don't "hide" the coach effect
  Based on these results I decided to set up an hypothesis test that will determine the significance level of the coach.
 
 ## part2 - Coach Hypothesis testing
-Set up an Hypothesis test for the coach effect: 
+Set up an Hypothesis test for the coach effect:
 
 - Null Hypothesis --> H<sub>0</sub> - coach has no effect --> W/L% stays the same after team changes a coach
 - Alternative Hypothesis --> H<sub>a</sub> - team W/L% changes when a new coach comes
@@ -88,6 +88,7 @@ Assumptions:
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
 
 Result of a 2 sided t-test:
+<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="center" height="500" width="500"> </p>
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach --> needs further investigation
 - According to this result I decided to continue optimizing the model without using the coach a feature
 
