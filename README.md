@@ -86,9 +86,9 @@ Assumptions:
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
-
-    <img src="plots/rv_dist.png" alt="Snow" style="width:50%">  <img src="plots/Hypo_dist.png" alt="Forest" style="width:50%">
-  
+<p align="center">
+    <img src="plots/rv_dist.png" alt="Snow" style="width:40%">  <img src="plots/Hypo_dist.png" alt="Forest" style="width:40%">
+</p>
 
 
 Result of a 2 sided t-test:
