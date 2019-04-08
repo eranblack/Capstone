@@ -102,8 +102,8 @@ Result of a 2 sided t-test:
 
 ## part3 - Model optimization:
 
-<p align="center">
-    <img src="Images/Optimization.jpg" alt="header" height="350" width="350">
+<p align="right">
+    <img src="Images/Optimization.jpg" alt="header" height="250" width="250">
  </p>
 
 step 1 - feature engineering:
@@ -119,7 +119,7 @@ step 1 - feature engineering:
     - Model MSE = 8.77
 - Added KMeans clustering to differentiate between players with high mean / low mean / high variance / low variance
     - cluster figure:
-    <p align="center">
+    <p align="right">
         <img src="plots/KMeans_minibatch.png" alt="alternate text">
      </p>
     - Model MSE = 8.744
