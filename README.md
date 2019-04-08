@@ -37,7 +37,7 @@ Chosen features:
 
 This result shows that the coach isn't a good feature for the model, this doesn't make sense so I decided to investigate further.
 ### Is there a coach effect?
-<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center" height="500" width="500"> </p>
+<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center" height="400" width="550"> </p>
 
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
@@ -86,11 +86,14 @@ Assumptions:
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
+<p> <img src="plots/rv_dist.jpg" alt="rv dist" align="right" height="500" width="500"> </p>
+
 
 Result of a 2 sided t-test:
-<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="center" height="500" width="500"> </p>
-- p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach --> needs further investigation
-- According to this result I decided to continue optimizing the model without using the coach a feature
+<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="right" height="500" width="500"> </p>
+- p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
+  needs further investigation
+- According to these results I decided to continue optimizing the model without using the coach a feature
 
 ## part3 - Model optimization:
 step 1 - feature engineering
