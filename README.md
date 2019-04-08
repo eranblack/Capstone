@@ -18,13 +18,8 @@ Data cleaning:
 
 ## Part1 - Data Exploration and initial modeling
 
-<p>This is some text. <img src="Images/Investigation.jpg" alt="Smiley face" align="middle"> This is some text.</p>
-<div>
-<p align="right">
-    <img src="Images/Investigation.jpg" alt="Investigation" height="300" width="300">
- </p>
- <p> ksdjghalkdhfgkahdjfgadfhgkahjdfg</p>
- </div>
+<p>fdlgkndaflkgnlsadkgnlasdkgknlsadnglskdanglksdnflsadnflansdflnasdlfnsdlfnsdlfnsldnflskdnflsdnfldsndlfndlknlkldflgsdlfkdslfndsflnndsfdsfdsffldndsalndfalnaf <img src="Images/Investigation.jpg" alt="Smiley face" align="right"> </p>
+
 Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect
 Chosen features:
  - Player Age
