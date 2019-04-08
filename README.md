@@ -103,7 +103,7 @@ Result of a 2 sided t-test:
 ## part3 - Model optimization:
 
 <p align="right">
-    <img src="Images/Optimization.jpg" alt="header" height="250" width="250">
+    <img src="Images/Optimization.jpg" alt="header" height="100" width="100">
  </p>
 
 step 1 - feature engineering:
