@@ -1,4 +1,7 @@
-# Capstone
+# Predicting NBA Player performance
+<p align="center">
+    <img src="images/Header.jpg alt="alternate text">
+ </p>
 In this project I want to predict player performance with relation to the coach.
 
 Data Collection:
