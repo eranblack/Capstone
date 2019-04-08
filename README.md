@@ -89,7 +89,7 @@ Assumptions:
 - One game is a Bernoulli trial --> G ~ Bernoulli(P), E[G]=P
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
-- D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT D ~ (0,&#x3C3;)
+- D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
 
 Result of a 2 sided t-test:
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach --> needs further investigation
@@ -112,14 +112,19 @@ step 1 - feature engineering
         <img src="plots/KMeans_minibatch.png" alt="alternate text">
      </p>
     - Model MSE = 8.744
-- Tried using a GradientBoost model --> bigger error
+- Tried using a GradientBoost model and a AdaBoost model --> bigger error
 - Removed features with low permutation importance:
-    - Model MSE = 8.676
-    - Set this to be the final model
+    - Model MSE = 8.676 --> final model
     - Key features:
         - Previous year ppg
         - Cluster (8 clusters, label0 - label6)
         - Age
         - log mean ppg
         - var ppg
+
 ## Part 4 - Results
+- The final model MSE error is 8.676 and is based in a cross validation preformed with this function cross_val.py
+- Class residuals figure example for year 2017:
+<p align="center">
+    <img src="plots/Final_model_resids" alt="alternate text">
+ </p>
