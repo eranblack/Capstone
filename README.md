@@ -17,6 +17,11 @@ Data cleaning:
 - code for data cleaning in Coach_Data.py, Season_Data.py, featurized_season_data.py
 
 ## Part1 - Data Exploration and initial modeling
+
+<div>
+    <p style="float: left;"><img src="Images/Investigation.jpg" height="200px" width="200px" border="1px"></p>
+    <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+</div>
 <div>
 <p align="right">
     <img src="Images/Investigation.jpg" alt="Investigation" height="300" width="300">
