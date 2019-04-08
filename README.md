@@ -101,7 +101,7 @@ Result of a 2 sided t-test:
 - According to these results I decided to continue optimizing the model without using the coach a feature
 
 ## part3 - Model optimization:
-<p> <img src="Images/Optimization.jpg" alt="optimization" align="right" height="400" width="400"> </p>
+<p> <img src="Images/Optimization.jpg" alt="optimization" align="right" height="150" width="150"> </p>
 step 1 - feature engineering
 - Tested different features to include in the model, most of the features didn't contribute
     - Benchmark MSE = 9.82
