@@ -18,9 +18,10 @@ Data cleaning:
 
 ## Part1 - Data Exploration and initial modeling
 
-<p> <img src="Images/Investigation.jpg" alt="Smiley face" align="right"> </p>
+<p> <img src="Images/Investigation.jpg" alt="Investigation" align="right"> </p>
 
-Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect
+Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect.
+
 Chosen features:
  - Player Age
  - Player previous season ppg
@@ -32,20 +33,12 @@ Chosen features:
  - I chose to use a limited amount of player features so it would be easier to identify if the coach effects the prediction
  - Created permutation feature importance to see which features are important
  - Tested the feature importance, see figure:
-<p align="center">
-    <img src="plots/model1_FI.png" alt="feature importances">
- </p>
+<p> <img src="plots/model1_FI.png" alt="model1_FI" align="right"> </p>
 
-<p align="center">
-    <img src="plots/model1_resids.png" alt="model1_resids">
- </p>
-- This result shows that we get a good prediction only using previous season ppg, age and previous minutes played, whereas
-    coach affect isn't showing.
-
+- This result shows that the coach isn't a good feature for the model, this doesn't make sense so I decided to investigate further.
 ### Is there a coach effect?
-<p align="center">
-    <img src="plots/Coach_Pop.jpg" alt="Coach_Pop">
- </p>
+<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center"> </p>
+
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
 normalized_ppg = player_ppg/max_player_ppg
