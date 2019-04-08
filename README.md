@@ -18,9 +18,7 @@ Data cleaning:
 
 ## Part1 - Data Exploration and initial modeling
 
-<p> Due to domain knowledge I chose a few features for the initial model,
-    and I was particularly interested in assessing the coach
-    feature effect<img src="Images/Investigation.jpg" alt="Smiley face" align="right"> </p>
+<p> <img src="Images/Investigation.jpg" alt="Smiley face" align="right"> </p>
 
 Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect
 Chosen features:
