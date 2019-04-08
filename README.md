@@ -87,8 +87,14 @@ Assumptions:
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
 <p align="center">
+<<<<<<< HEAD
     <img src="plots/rv_dist.png" alt="rv_dist" style="width:40%">  <img src="plots/Hypo_dist.png" alt="Hypo_dist" style="width:40%">
 </p>
+=======
+    <img src="plots/rv_dist.png" alt="Snow" style="width:40%">  <img src="plots/Hypo_dist.png" alt="Forest" style="width:40%">
+</p>
+
+>>>>>>> b3395ffb6a1e1baf9dfedcaa65d2b003cc3a2dc9
 
 Result of a 2 sided t-test:
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
