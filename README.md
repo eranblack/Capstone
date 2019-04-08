@@ -35,53 +35,47 @@ Chosen features:
  - Tested the feature importance, see figure:
 <p> <img src="plots/model1_FI.png" alt="model1_FI" align="right"> </p>
 
-- This result shows that the coach isn't a good feature for the model, this doesn't make sense so I decided to investigate further.
+This result shows that the coach isn't a good feature for the model, this doesn't make sense so I decided to investigate further.
 ### Is there a coach effect?
-<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center"> </p>
+<p> <img src="Images/Coach_Pop.jpg" alt="Coach_Pop" align="center" height="350" width="350"> </p>
 
 
 In order to understand this result I tried running the model again after normalizing the data based on player -->
 normalized_ppg = player_ppg/max_player_ppg
 I did this so players that have a high ppg average don't "hide" the coach effect.
 
-model2:
+#### model2 - understanding coach effect:
 - created a random forest model with normalized values
 - Used the same features I used in model 1
-- for this model the MSE is 0.044 whereas the benchmark is 0.081
+<!-- - for this model the MSE is 0.044 whereas the benchmark is 0.081 -->
 - feature importance is still showing the coach has very limited effect
-
 <p align="center">
     <img src="plots/model2_FI.png" alt="alternate text">
  </p>
-
- <p align="center">
-     <img src="plots/model2_resids.png" alt="alternate text">
-  </p>
-
  Based on this result I decided to further investigate the coach effect:
 
- model3:
+#### model3 - understanding coach effect:
  In this model I tried to measure coach effect but on a team level and not a player level:
  - Tried to predict a team W/L % ratio based on previous season W/L% and coach.
  - Created a random forest model which got a MSE 0.0165 whereas the benchmark got 0.0168
-
  <p align="center">
      <img src="plots/model3_FI.png" alt="alternate text">
  </p>
- <p align="center">
+ <!-- <p align="center">
       <img src="plots/model3_resids.png" alt="alternate text">
  </p>
 
  <p align="center">
        <img src="plots/model3_bar.png" alt="alternate text">
- </p>
+ </p> -->
 
  - again the result show that the significance of the coach is low
 
  Based on these results I decided to set up an hypothesis test that will determine the significance level of the coach.
 
-## part2
-Hypothesis testing:
+## part2 - Coach Hypothesis testing
+Set up an Hypothesis test for the coach effect: 
+
 - Null Hypothesis --> H<sub>0</sub> - coach has no effect --> W/L% stays the same after team changes a coach
 - Alternative Hypothesis --> H<sub>a</sub> - team W/L% changes when a new coach comes
 - Significance level &#x3B1; = 5%
