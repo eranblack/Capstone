@@ -1,6 +1,6 @@
 # Predicting NBA Player performance
 <p align="center">
-    <img src="images/Header.jpg alt="alternate text">
+    <img src="Images/Header.jpg alt="alternate text">
  </p>
 In this project I want to predict player performance with relation to the coach.
 
