@@ -126,5 +126,5 @@ step 1 - feature engineering
 - The final model MSE error is 8.676 and is based in a cross validation preformed with this function cross_val.py
 - Class residuals figure example for year 2017:
 <p align="center">
-    <img src="plots/Final_model_resids" alt="alternate text">
+    <img src="plots/Final_model_resids.png" alt="alternate text">
  </p>
