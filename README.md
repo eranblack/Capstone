@@ -101,10 +101,10 @@ Result of a 2 sided t-test:
 - According to these results I decided to continue optimizing the model without using the coach a feature
 
 ## part3 - Model optimization:
-<p> <img src="Images/Optimization.jpg" alt="optimization" align="right" height="150" width="150"> </p>
 
-
-
+<p align="center">
+    <img src="Images/Optimization.jpg" alt="header" height="350" width="350">
+ </p>
 
 step 1 - feature engineering:
 
