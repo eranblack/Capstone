@@ -16,7 +16,7 @@ Data cleaning:
 - removed duplicates and NaN's
 - code for data cleaning in Coach_Data.py, Season_Data.py, featurized_season_data.py
 
-## Part1 - Data Exploration and initial modeling
+## Part 1 - Data Exploration and initial modeling
 
 <p> <img src="Images/Investigation.jpg" alt="Investigation" align="right"> </p>
 
@@ -44,7 +44,7 @@ In order to understand this result I tried running the model again after normali
 normalized_ppg = player_ppg/max_player_ppg
 I did this so players that have a high ppg average don't "hide" the coach effect.
 
-#### model2 - understanding coach effect:
+#### model 2 - understanding coach effect:
 - created a random forest model with normalized values
 - Used the same features I used in model 1
 <!-- - for this model the MSE is 0.044 whereas the benchmark is 0.081 -->
@@ -54,7 +54,7 @@ I did this so players that have a high ppg average don't "hide" the coach effect
  </p>
  Based on this result I decided to further investigate the coach effect:
 
-#### model3 - understanding coach effect:
+#### model 3 - understanding coach effect:
  In this model I tried to measure coach effect but on a team level and not a player level:
  - Tried to predict a team W/L % ratio based on previous season W/L% and coach.
  - Created a random forest model which got a MSE 0.0165 whereas the benchmark got 0.0168
@@ -73,7 +73,7 @@ I did this so players that have a high ppg average don't "hide" the coach effect
 
  Based on these results I decided to set up an hypothesis test that will determine the significance level of the coach.
 
-## part2 - Coach Hypothesis testing
+## part 2 - Coach Hypothesis testing
 Set up an Hypothesis test for the coach effect:
 
 - Null Hypothesis --> H<sub>0</sub> - coach has no effect --> W/L% stays the same after team changes a coach
@@ -86,23 +86,17 @@ Assumptions:
 - One season of N games is a Binomial distribution --> S ~ Bin(N,P), E[S]=N*P
 - S&#772; = S/N , E[S&#772;] = P
 - D = S&#772;<sub>after</sub> - S&#772;<sub>before</sub> --> CLT --> D ~ (0,&#x3C3;)
-<div class="row">
-  <div class="column">
-    <img src="plots/rv_dist.png" alt="Snow" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="plots/Hypo_dist.png" alt="Forest" style="width:100%">
-  </div>
-</div>
+<p align="center">
+    <img src="plots/rv_dist.png" alt="rv_dist" style="width:40%">  <img src="plots/Hypo_dist.png" alt="Hypo_dist" style="width:40%">
+</p>
 
 Result of a 2 sided t-test:
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
   needs further investigation
 - According to these results I decided to continue optimizing the model without using the coach a feature
 
-## part3 - Model optimization:
+## part 3 - Model optimization:
 <p> <img src="Images/Optimization.jpg" alt="model1_FI" height="75" width="75"align="right"> </p>
-
 step 1 - feature engineering:
 - Tested different features to include in the model, most of the features didn't contribute
     - Benchmark MSE = 9.82
@@ -114,11 +108,12 @@ step 1 - feature engineering:
 - Added two features rolling mean ppg and rolling variance ppg that include previous seasons
     - Model MSE = 8.77
 - Added KMeans clustering to differentiate between players with high mean / low mean / high variance / low variance
+    - Model MSE = 8.744
     - cluster figure:
-    <p align="right">
+    <p align="center">
         <img src="plots/KMeans_minibatch.png" alt="alternate text">
      </p>
-    - Model MSE = 8.744
+
 - Tried using a GradientBoost model and a AdaBoost model --> bigger error
 - Removed features with low permutation importance:
     - Model MSE = 8.676 --> final model
@@ -130,8 +125,14 @@ step 1 - feature engineering:
         - var ppg
 
 ## Part 4 - Results
-- The final model MSE error is 8.676 and is based in a cross validation preformed with this function cross_val.py
+- The final model MSE error is 8.676 and is based on a cross validation preformed with this function cross_val.py
 - Class residuals figure example for year 2017:
 <p align="center">
     <img src="plots/Final_model_resids.png" alt="alternate text">
  </p>
+ <p align="center">
+     <img src="plots/Final_model_resids.png" alt="alternate text">
+  </p>
+  <p align="center">
+      <img src="plots/Final_model_resids_all.png" alt="alternate text">
+   </p>
