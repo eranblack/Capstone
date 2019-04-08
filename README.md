@@ -17,9 +17,12 @@ Data cleaning:
 - code for data cleaning in Coach_Data.py, Season_Data.py, featurized_season_data.py
 
 ## Part1 - Data Exploration and initial modeling
+<div>
 <p align="right">
-    <img src="Images/Investigation.jpg" alt="Investigation" height="350" width="350">
+    <img src="Images/Investigation.jpg" alt="Investigation" height="300" width="300">
  </p>
+ <p> ksdjghalkdhfgkahdjfgadfhgkahjdfg</p>
+ </div>
 Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect
 Chosen features:
  - Player Age
