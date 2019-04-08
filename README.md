@@ -90,7 +90,9 @@ Assumptions:
 
 
 Result of a 2 sided t-test:
-<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="right" height="400" width="400"> </p>
+<p align="center">
+    <img src="plots/rv_dist.png" alt="alternate text">
+ </p>
 
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
   needs further investigation
