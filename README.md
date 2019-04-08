@@ -18,7 +18,7 @@ Data cleaning:
 
 ## Part1 - Data Exploration and initial modeling
 
-<p>This is some text. <img "Images/Investigation.jpg" alt="Smiley face" align="middle"> This is some text.</p>
+<p>This is some text. <img src="Images/Investigation.jpg" alt="Smiley face" align="middle"> This is some text.</p>
 <div>
 <p align="right">
     <img src="Images/Investigation.jpg" alt="Investigation" height="300" width="300">
