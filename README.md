@@ -90,7 +90,8 @@ Assumptions:
 
 
 Result of a 2 sided t-test:
-<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="right" height="500" width="500"> </p>
+<p> <img src="plots/Hypo_dist.png" alt="Hypo_dist" align="right" height="400" width="400"> </p>
+
 - p-value = 0.00051 --> reject the null hypothesis --> cant rule out the effect of the coach -->
   needs further investigation
 - According to these results I decided to continue optimizing the model without using the coach a feature
