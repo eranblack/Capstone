@@ -2,7 +2,9 @@
 <p align="center">
     <img src="Images/Header.jpg" alt="header" height="350" width="350">
  </p>
+
 ## Motivation
+
 In this project I want to predict player performance, as first step I will predict a players seasonal ppg (points per game)
 
 Data Collection:
