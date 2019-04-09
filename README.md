@@ -2,6 +2,7 @@
 <p align="center">
     <img src="Images/Header.jpg" alt="header" height="350" width="350">
  </p>
+## Motivation
 In this project I want to predict player performance, as first step I will predict a players seasonal ppg (points per game)
 
 Data Collection:
@@ -129,8 +130,22 @@ step 1 - feature engineering:
 - The final model MSE error is 8.676 and is based on a cross validation preformed with this function cross_val.py
 - Class residuals figure example for year 2017:
 <p align="center">
+    <img src="plots/Final_model_resids_all.png" alt="alternate text">
+ </p>
+<p align="center">
     <img src="plots/Final_model_resids.png" alt="alternate text">
  </p>
- <p align="center">
-     <img src="plots/Final_model_resids_all.png" alt="alternate text">
-  </p>
+
+## Part 5 - Application
+The application for this model is to help select/dismiss players at the beginning of the season based on their predicted performance.
+
+Use Case Example:
+- The year is 2014
+- The GM and coach of a team are about to close their roster and want to evaluate the team performance based on their selected players.
+- Running the model on year 2015 gives these results:
+
+
+
+## Part 6 - Future Work
+
+## Part 7 -
