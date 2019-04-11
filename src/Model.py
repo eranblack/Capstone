@@ -33,6 +33,7 @@ class ModelP:
         self.y_test=pd.DataFrame()
         self.label_train=np.array([])
         self.label_test=np.array([])
+        self.team=pd.DataFrame([])
         self.y_pred=np.array([])
         self.rf_reg=RandomForestRegressor(max_depth=5, random_state=0,n_estimators=200)
 
@@ -55,6 +56,7 @@ class ModelP:
         self.label_test=mini.fit_predict(X_cluster_test)
         df_year['label']=self.label_test
         df_year=pd.get_dummies(df_year,columns=['label'])
+        self.team=df_year['team_x'].copy()
 
         self.X_train=df_train[['Age_x','ppg_y','log_mean_ppg_y','var_ppg_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6']]
         self.y_train=df_train[['ppg_x']]
@@ -70,6 +72,7 @@ class ModelP:
             all_player['ppg_pred']=self.y_pred.copy()
             all_player['label']=self.label_test.copy()
             all_player['true_ppg']=self.y_test.copy()
+            all_player['team']=self.team.copy()
             return (all_player[['Age_x','ppg_y','ppg_pred','true_ppg','label']])
         else:
             for arg in args:
@@ -137,3 +140,18 @@ class ModelP:
         viz = plot_importances(imp,width=6, vscale=2)
         viz.view()
         print(imp)
+
+    def teams(self):
+        team_pred={}
+        all_player=self.X_test.copy()
+        all_player['ppg_pred']=self.y_pred.copy()
+        all_player['label']=self.label_test.copy()
+        all_player['true_ppg']=self.y_test.copy()
+        all_player['team']=self.team.copy()
+
+        all_player=all_player[['ppg_y','ppg_pred','true_ppg','team','label']]
+        team_p=all_player.groupby(by='team').sum()
+        team_pred['team_prediction']=team_p.copy()
+        team_pred['team_pred_MSE']=mean_squared_error(team_p['true_ppg'],team_p['ppg_pred'])
+        team_pred['team_bencmark_MSE']=mean_squared_error(team_p['true_ppg'],team_p['ppg_y'])
+        return(team_pred)
