@@ -5,7 +5,11 @@
 
 ## Motivation
 
-In this project I want to predict player performance, as first step I will predict a players seasonal ppg (points per game)
+- NBA teams spend ~100 million dollar a year on players
+- Player performance can impact the teams revenue
+- Knowing how a player is going to perform can help the team make wise business decisions
+
+## Data
 
 Data Collection:
 - player data collected from kaggle https://www.kaggle.com/drgilermo/nba-players-stats
@@ -147,7 +151,22 @@ Use Case Example:
     <img src="Images/Example.png" alt="Boston example">
  </p>
 
+ - This difference, 100 compared to 107 ppg (points per game) can heavily affect the teams position. This can mean a team making the playoffs vs not making the playoffs. Not making the playoffs can mean a loss of millions to the team revenue.
+ - Knowing this information prior to the start of the season can give the team a chance to make better business decisions
+
 
 ## Part 6 - Future Work
+
+Enhance model and model performance:
+- Separate players by position
+- Apply different weights to each cluster
+- Predict other player features such as rebounds, assists et. cetra
+Interface:
+- Create a user interface
+- add current season data
+
+Manual
+- add a user manual to the repo
+- add code exampel using the class created
 
 ## Part 7 -
