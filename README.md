@@ -176,4 +176,4 @@ I'm Eran, data scientist and a product manager. I love technology, and using dat
 For any questions/comments you can contact me via LinkedIn [Eran-LinkedIn](www.linkedin.com)
 <a href="www.linkedin.com/in/eran-shchory-01a717b6">Eran-LinkedIn</a>
 
-<a href="www.linkedin.com/in/eran-shchory-01a717b6">here</a>
+<a href="www.linkedin.com">here</a>
