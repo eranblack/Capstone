@@ -5,7 +5,7 @@
 
 ## Motivation
 
-- NBA teams spend ~100 million dollar a year on players
+- NBA teams spend ~100 million dollars a year on players
 - Player performance can impact the teams revenue
 - Knowing how a player is going to perform can help the team make wise business decisions
 
@@ -169,4 +169,8 @@ Manual
 - add a user manual to the repo
 - add code exampel using the class created
 
-## Part 7 -
+## Part 7 - About the author
+
+I'm Eran, data scientist and a product manager. I love technology, and using data to help businesses.
+
+For any questions/comments you can contact me via LinkedIn [Eran-LinkedIn](www.linkedin.com/in/eran-shchory-01a717b6 )
