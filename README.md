@@ -173,7 +173,7 @@ Manual
 
 I'm Eran, data scientist and a product manager. I love technology, and using data to help businesses.
 
-For any questions/comments you can contact me via LinkedIn [Eran-LinkedIn](www.linkedin.com)
+For any questions/comments you can contact me via LinkedIn [Eran-LinkedIn](https://www.linkedin.com/in/eran-shchory-01a717b6)
 <a href="www.linkedin.com/in/eran-shchory-01a717b6">Eran-LinkedIn</a>
 
 <a href="www.linkedin.com">here</a>
