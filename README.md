@@ -146,7 +146,7 @@ step 1 - feature engineering:
 The application for this model is to help select/dismiss players at the beginning of the season based on their predicted performance.
 
 Use Case Example:
-- Using on the model on the 2015 Boston Celtics
+- Using on the model on the 2012 Boston Celtics
 <p align="center">
     <img src="Images/Example.png" alt="Boston example">
  </p>
@@ -154,22 +154,39 @@ Use Case Example:
  - This difference, 100 compared to 107 ppg (points per game) can heavily affect the teams position. This can mean a team making the playoffs vs not making the playoffs. Not making the playoffs can mean a loss of millions to the team revenue.
  - Knowing this information prior to the start of the season can give the team a chance to make better business decisions
 
+## Part 6 - Code
 
-## Part 6 - Future Work
+The src folder contains 4 py files.
+- Coach_Data.py --> This is the code that web scrapes the coach data and saves the data to coach_data_cleaned.csv
+- Season Data.py --> This code takes in the original kaggle.com dataset (Season_stats.csv), cleans it and saves it as 'Season_cleaned.csv'
+- featurized_season_data.py --> takes in the 'Season_cleaned.csv' dataset, featurizes and saves the data as 'Season_Featurized.csv'
+- Cross_Validation.py --> code for running cross validation on the class model
+- Model.py --> This is the model. Model takes in the clean featurized season data ('Season_Featurized.csv') and predicts
+    - Working with the class model:
+        - Creating the class model: model=ModelP('year') # the model is build for predicting for the specified year (works for years 2008 to 2017)
+        - Fitting the class model: model.fit(df) ,df=pd.read_csv('data/Season_Featurized.csv', index_col=[0])
+        - model.predict() returns all the predictions for the required season. model.predict('player name') returns the prediction for the specific player
+        - model.score() --> returns the MSE score of the model
+        - model.plots('type') # type = 'hist' or 'residuals' returns the required plot
+        - model.clusters() returns the predictions for the clusters
+        model.importances(), returns the permutation importance plot of the features
+        - model.teams() returns the predictions aggregated by team.
+
+## Part 7 - Future Work
 
 Enhance model and model performance:
 - Separate players by position
 - Apply different weights to each cluster
-- Predict other player features such as rebounds, assists et. cetra
+- Predict other player features such as rebounds, assists et. cetera
 Interface:
 - Create a user interface
 - add current season data
 
-Manual
-- add a user manual to the repo
+Manual:
+
 - add code example using the class created
 
-## Part 7 - About the author
+## Part 8 - About the author
 
 I'm Eran, data scientist and a product manager. I love technology, and using data to help businesses.
 
