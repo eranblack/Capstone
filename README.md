@@ -142,10 +142,10 @@ step 1 - feature engineering:
 The application for this model is to help select/dismiss players at the beginning of the season based on their predicted performance.
 
 Use Case Example:
-- The year is 2014
-- The GM and coach of a team are about to close their roster and want to evaluate the team performance based on their selected players.
-- Running the model on year 2015 gives these results:
-
+- Using on the model on the 2015 Boston Celtics
+<p align="center">
+    <img src="Images/Example.png" alt="Boston example">
+ </p>
 
 
 ## Part 6 - Future Work
