@@ -167,7 +167,7 @@ Interface:
 
 Manual
 - add a user manual to the repo
-- add code exampel using the class created
+- add code example using the class created
 
 ## Part 7 - About the author
 
