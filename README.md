@@ -165,12 +165,12 @@ The src folder contains 4 py files.
     - Working with the class model:
         - Creating the class model: model=ModelP('year') # the model is build for predicting for the specified year (works for years 2008 to 2017)
         - Fitting the class model: model.fit(df) ,df=pd.read_csv('data/Season_Featurized.csv', index_col=[0])
-        - model.predict() returns all the predictions for the required season. model.predict('player name') returns the prediction for the specific player
+        - model.predict() --> returns all the predictions for the required season. model.predict('player name') returns the prediction for the specific player
         - model.score() --> returns the MSE score of the model
-        - model.plots('type') # type = 'hist' or 'residuals' returns the required plot
-        - model.clusters() returns the predictions for the clusters
-        model.importances(), returns the permutation importance plot of the features
-        - model.teams() returns the predictions aggregated by team.
+        - model.plots('type') --> type = 'hist' or 'residuals' returns the required plot
+        - model.clusters() --> returns the predictions for the clusters
+        model.importances() --> returns the permutation importance plot of the features
+        - model.teams() --> returns the predictions aggregated by team.
 
 ## Part 7 - Future Work
 
