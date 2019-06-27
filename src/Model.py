@@ -22,10 +22,8 @@ warnings.filterwarnings("ignore")
 pd.set_option("display.max_columns", 2000)
 pd.set_option('precision', 2) #setting the number of decimel points
 
-# model class:
-
-class ModelP:
-    def __init__(self,year): #Initiate the model with the desired year
+class ModelP: # defines the class model, gets a year as an input (the year is the year of the prediction, for example using 2012 will train the model on all previous years)
+    def __init__(self,year):
         self.year=year
         self.X_train=pd.DataFrame()
         self.y_train=pd.DataFrame()
@@ -37,33 +35,30 @@ class ModelP:
         self.y_pred=np.array([])
         self.rf_reg=RandomForestRegressor(max_depth=5, random_state=0,n_estimators=200)
 
-    def fit(self,df): # creates clusters and sets up the data for the regression model
-        df_train=df[df['Year_x']<self.year] #check if taking only the previous year preforms better?
-
+    def fit(self,df): # This method is for fitting the model. It creates clusters and sets up the data for the regression model, and fits the model
+        # defining the training data:
+        df_train=df[df['Year_x']<self.year]
         mini_train=MiniBatchKMeans(n_clusters=8, batch_size=100, random_state=4)
         X_cluster_train=df_train[['log_mean_ppg_y','ppg_y_std']]
-
-        self.label_train=mini_train.fit_predict(X_cluster_train)
-
-        df_train['label']=self.label_train
+        self.label_train=mini_train.fit_predict(X_cluster_train) #getting the clusters from the KMeans model
+        df_train['label']=self.label_train # adding the clusters as a new feature to the training set
         df_train=pd.get_dummies(df_train,columns=['label'])
-
         df_year=df[df['Year_x']==self.year]
-        mini=MiniBatchKMeans(n_clusters=8, batch_size=100, random_state=4)
 
+        # defining the test data
+        mini=MiniBatchKMeans(n_clusters=8, batch_size=100, random_state=4) #setting the cluster for the test set
         X_cluster_test=df_year[['log_mean_ppg_y','ppg_y_std']]
-
         self.label_test=mini.fit_predict(X_cluster_test)
         df_year['label']=self.label_test
         df_year=pd.get_dummies(df_year,columns=['label'])
         self.team=df_year['team_x'].copy()
-
         self.X_train=df_train[['Age_x','ppg_y','log_mean_ppg_y','var_ppg_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6']]
         self.y_train=df_train[['ppg_x']]
         self.X_test=df_year[['Age_x','ppg_y','log_mean_ppg_y','var_ppg_y','label_0','label_1','label_2','label_3','label_4','label_5','label_6']]
         self.y_test=df_year[['ppg_x']]
 
-    def predict(self,*args): # predicts the player/all players ppg
+    # this is the predict method for the model.
+    def predict(self,*args): # predicts the player/all players ppg depending on the the *args. Returns the prediction for the player/players
         player_d={}
         self.rf_reg.fit(self.X_train,self.y_train)
         self.y_pred=self.rf_reg.predict(self.X_test)
@@ -84,7 +79,8 @@ class ModelP:
                 player_d[arg]=player_d[arg][['Age_x','ppg_y','ppg_pred','y_test','label']]
             return player_d
 
-    def score(self): # returns the MSE score for the model and for the benchmark model
+    # Method for evaluating the model. Compares the MSE score of the model vs the benchmark model
+    def score(self):
         mse=mean_squared_error(self.y_test,self.y_pred)
         print('The MSE is : {}'.format(mse))
 
@@ -92,8 +88,8 @@ class ModelP:
         print('The benchmark MSE is : {}'.format(benchmark_error))
         return (mse)
 
+    # method for plotting the residuals and hist of the model predictions. Method recieves plot type as 'residuals' or 'hist'
     def plots(self,plot_type='residuals'): # plots --> plot_type= 'residuals' or 'hist'
-
         hand={}
         self.y_pred.reshape(-1,1)
         temp=pd.DataFrame(index=self.y_test.index, columns=['y_test','y_pred','cluster'])
@@ -122,6 +118,7 @@ class ModelP:
             plt.tight_layout()
             plt.show()
 
+    #Method for looking and evaluating the clusters the model made.
     def clusters(self): # get the clusters with the residuals and player names
         cluster={}
         clus_resids={}
@@ -135,12 +132,15 @@ class ModelP:
             clus_resids[clus]=(cluster[clus]['resids'].mean(),cluster[clus]['resids'].std())
         return cluster, clus_resids
 
+
+    #Method for evaluating the permutation importances of the model features
     def importance(self): # permutation feature importance using rfpimp library
         imp =importances(self.rf_reg, self.X_test, self.y_test)
         viz = plot_importances(imp,width=6, vscale=2)
         viz.view()
         print(imp)
 
+    #Method for getting the aggregated prediction per team.  Allows precicting the teams points per game.
     def teams(self):
         team_pred={}
         all_player=self.X_test.copy()
