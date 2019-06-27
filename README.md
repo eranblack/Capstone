@@ -105,7 +105,6 @@ Result of a 2 sided t-test:
 ## part 3 - Model optimization:
 <p> <img src="Images/Optimization.jpg" alt="model1_FI" height="75" width="75"align="right"> </p>
 
-step 1 - feature engineering:
 - Tested different features to include in the model, most of the features didn't contribute
     - Benchmark MSE = 9.82
     - Model MSE = 9.328
