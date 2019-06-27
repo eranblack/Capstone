@@ -30,7 +30,7 @@ df_full=pd.read_csv('../data/Seasons_Stats.csv')
 df_full.drop(columns='Unnamed: 0', inplace=True)
 # removing the data prior to year 2005:
 df=df_full[df_full['Year']>=2005]
-# removing balnk colimns, changing the year to a date time :
+# removing balnk coloumns, changing the year to a date time :
 df.drop(labels='blank2', axis=1, inplace=True)
 df.drop(labels='blanl', axis=1, inplace=True)
 df['Year']=df['Year'].astype(int)
@@ -59,6 +59,7 @@ def remove_tot(df_tot):
                     df_tot.drop(axis=0, index=element, inplace=True)
     return(df_tot)
 df=remove_tot(df)
+
 #renaming columns:
 df['team']=df['Tm']
 df.drop(columns='Tm',inplace=True)

@@ -22,16 +22,12 @@ warnings.filterwarnings("ignore")
 pd.set_option("display.max_columns", 2000)
 pd.set_option('precision', 2) #setting the number of decimel points
 
-
-
 # Feature engineering :
 df=pd.read_csv('../data/Season_cleaned.csv') # importing the cleaned data
 
 # Creating new features:
-
 df['ppg']=df['PTS']/df['G'] #points per game
 df['ppm']=df['PTS']/df['MP'] # points per minute
-
 
 #creating window for calculating the previous seasons mean and variance on ppg from previous seasons
 def mean_var(df):
@@ -85,8 +81,6 @@ df['log_mean_ppg_x']=np.log(df['mean_ppg_x'])
 df['log_mean_ppg_y']=np.log(df['mean_ppg_y'])
 df['ppg_x_std']=np.sqrt(df['var_ppg_x'])
 df['ppg_y_std']=np.sqrt(df['var_ppg_y'])
-
-########## ENTER THE PLOT OF THE DISTRIBUTION OF THE LOG(MEAN PPG) VS STD(PPG)
 
 
 # changing the index of the data frame to the player name and year:

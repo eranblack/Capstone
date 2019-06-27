@@ -1,3 +1,7 @@
+
+# This function is for cross validating the model
+# it trains the model on previous years and evaluates the current year.
+# this runs "number" times and takes the average score.
 def cross_val(df,number=5):
     score=[]
     team_resids_bench=[]
@@ -11,4 +15,4 @@ def cross_val(df,number=5):
         team_pred=cross_model.teams()
         team_resids_bench.append(team_pred['mean_bencmark_resids'])
         team_resids_pred.append(team_pred['mean_pred_resids'])
-    return (np.mean(score),np.mean(team_resids_bench),np.mean(team_resids_pred)) 
+    return (np.mean(score),np.mean(team_resids_bench),np.mean(team_resids_pred))
