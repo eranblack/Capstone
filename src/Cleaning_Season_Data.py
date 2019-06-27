@@ -71,5 +71,4 @@ df['team']=df['team'].apply(lambda x: x[1:4] if len(x)>3 else x)
 df=df.drop_duplicates(subset=['Year','Player'], keep=False)
 
 # write cleaned data to csv:
-
 df.to_csv('../data/Season_cleaned.csv')
