@@ -27,7 +27,7 @@ Data cleaning:
 
 <p> <img src="Images/Investigation.jpg" alt="Investigation" align="right"> </p>
 
-Due to domain knowledge I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect.
+I chose a few features for the initial model, and I was particularly interested in assessing the coach feature effect.
 
 Chosen features:
  - Player Age
